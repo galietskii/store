@@ -1,0 +1,33 @@
+.job {
+    padding: get-vw(60px) 0;
+    background-color: $main;
+    text-align: center;
+    &__description {
+        margin-top: get-vw(60px);
+        max-width: 720px;
+        width: 100%;
+        margin: get-vw(60px) auto get-vw(60px) auto;
+        p {
+            font-size: get-vw(40px);
+            color: white;
+            line-height: 1.5;
+        }
+    }
+    a {
+        border-radius: 2px;
+        font-size: 24px;
+        color: white;
+        border: 1px solid white;
+        padding: 10px 20px;
+        
+        svg {
+            vertical-align: baseline;
+            margin-left: get-vw(50px);
+        }
+    }
+    &__subtext {
+        margin-top: 20px;
+        color: white;
+        opacity: 0.6;
+    }
+}

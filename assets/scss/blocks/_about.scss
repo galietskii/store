@@ -1,0 +1,78 @@
+.about {
+    padding: get-vw(120px) 0;
+    
+    &__title {
+        margin-bottom: get-vw(120px);
+        h2 {
+            font-size: get-vw(80px);
+            color: $main;
+            font-weight: normal;
+            
+        }
+
+        p {
+            font-size: get-vw(40px);
+
+            strong {
+                color: $main;
+                border: 2px solid $main;
+                font-weight: normal;
+                line-height: 1;
+                padding: 0 4px;
+                border-radius: 2px;
+            }
+        }
+    }
+    .about-block {
+        padding-left: get-vw(85px);
+    }
+    .about-block:first-child {
+        padding-left: 15px;
+    }
+    &__specification {
+        div {
+            margin-top: get-vw(60px);
+        }
+        p {
+            display: inline;
+            background-color: $main;
+            color: white;
+            line-height: 1.75;
+        }
+    }
+    .specifications {
+        justify-content: center;
+    }
+   &__directors {
+    margin-top: get-vw(120px);
+    text-align: center;
+    a {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    &-photo {
+        width: get-vw(160px);
+        border-radius: 100%;
+    }
+
+    &-job {
+        color: black;
+        font-weight: bold;
+        margin-top: get-vw(20px);
+        margin-bottom: 5px;
+    }
+    a p {
+        color: $main;
+        margin: 0 10px 0 0;
+    }
+    
+   }
+   &__button {
+    text-align: center;
+    margin-top: get-vw(120px);
+        a {
+            padding: 10px 40px;
+        }
+   }
+}

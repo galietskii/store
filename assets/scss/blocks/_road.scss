@@ -1,0 +1,94 @@
+.road {
+    padding-bottom: get-vw(120px);
+
+    &__description {
+        max-width: 720px;
+        width: 100%;
+        margin: 0 auto get-vw(120px) auto;
+
+        p {
+            font-size: get-vw(40px);
+            text-align: center;
+            line-height: 2;
+
+            strong {
+                color: $main;
+                border: 2px solid $main;
+                font-weight: normal;
+                line-height: 1;
+                padding: 0 4px;
+                border-radius: 2px;
+            }
+        }
+    }
+
+    &__list {
+        display: flex;
+        align-items: center;
+        margin-bottom: 30px;
+
+        .date {
+            font-size: 18px;
+        }
+
+        .title {
+            position: relative;
+            font-size: 24px;
+            margin-left: get-vw(60px);
+            margin-bottom: 0;
+            padding-bottom: 20px;
+
+            &:before {
+                content: '';
+                position: absolute;
+                width: 60px;
+                height: 2px;
+                bottom: 0;
+                left: 0;
+                background-color: black;
+                opacity: 0.1;
+            }
+        }
+
+        &:first-child {
+            .date {
+                color: black;
+                opacity: 0.2;
+            }
+
+            .title {
+                color: black;
+                opacity: 0.6;
+            }
+        }
+
+        &:nth-child(2) {
+            .date {
+                opacity: 0.6;
+            }
+        }
+
+        &:nth-child(3) {
+            .date {
+                color: $main;
+            }
+
+            .title {
+                color: $main;
+
+                &::before {
+                    content: none;
+                }
+            }
+        }
+    }
+
+    &__button {
+        text-align: center;
+        margin-top: get-vw(120px);
+
+        .button {
+            padding: 10px 20px;
+        }
+    }
+}

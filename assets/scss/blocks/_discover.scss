@@ -1,0 +1,41 @@
+.discover {
+    padding-bottom: get-vw(125px);
+    &__description {
+        max-width: 720px;
+        width: 100%;
+        margin: 0 auto get-vw(120px) auto;
+        p {
+            font-size: get-vw(40px);
+
+            strong {
+                color: $main;
+                border: 2px solid $main;
+                font-weight: normal;
+                line-height: 1;
+                padding: 0 4px;
+                border-radius: 2px;
+            }
+        }
+    }
+    &__block {
+        width: get-vw(500px);
+        height: get-vw(400px);
+        padding: get-vw(50px);
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        a {
+            width: get-vw(300px);
+            font-size: get-vw(24px);
+            color: white;
+            border: 1px solid white;
+            padding: 10px;
+            text-align: center;
+            margin: 0 auto;
+        }
+        img {
+            max-width: 207px;
+        }
+    }
+}
