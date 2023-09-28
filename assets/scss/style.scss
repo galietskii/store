@@ -17,11 +17,7 @@
 @import "footer";
 /* Import blocks */
 @import 'blocks/hero';
-@import "blocks/about";
-@import "blocks/discover";
-@import "blocks/road";
-@import "blocks/job";
-@import "blocks/subscribe";
+@import 'blocks/show-example';
 
 .content-wrapper {
   height: 100%;
