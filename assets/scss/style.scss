@@ -1,10 +1,10 @@
 // General
 .container {
-  max-width: 1350px !important;
+  max-width: 1200px !important;
 }
 
 @function get-vw($target) {
-  $vw-context: (1440 * 0.01) * 1px;
+  $vw-context: (1920 * 0.01) * 1px;
   @return ($target / $vw-context) * 1vw;
 }
 

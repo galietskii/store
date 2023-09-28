@@ -1,10 +1,5 @@
-<?php
-$logo = get_field('logo', 'options');
-$description = get_field('description', 'options');
-$year = get_field('year', 'options');
-$cacke = get_field('cacke', 'options');
-?>
-<footer class="footer">
+
+<!-- <footer class="footer">
     <div class="container">
         <div class="row">
             <?php if($logo): ?>
@@ -65,7 +60,12 @@ $cacke = get_field('cacke', 'options');
 
         </div>
     </div>
-</footer>
+</footer> -->
+<?php
+if (is_active_sidebar('woocommerce_sidebar')) {
+    dynamic_sidebar('woocommerce_sidebar');
+}
+?>
 <?php wp_footer(); ?>
 
 </body>

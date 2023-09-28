@@ -5,12 +5,20 @@ body {
 html {
   scroll-behavior: smooth;
 }
-
+.col-sm-6 {
+  @media screen and (min-width: 320px){
+    flex: 0 0 50%;
+    max-width: 50%;
+  }
+}
+h1 {
+  font-family: $font;
+}
 h3 {
   font-size: get-vw(24px);
-  color: $darkGray;
   line-height: 1.2;
   text-align: center;
+  font-family: $font;
 }
 
 h2 {
@@ -18,6 +26,7 @@ h2 {
   font-style: normal;
   font-weight: 700;
   color: white;
+  font-family: $font;
 }
 
 h4 {
@@ -27,7 +36,9 @@ h4 {
   line-height: 1.2;
 }
 
-
+a {
+  font-family: $font;
+}
 
 p {
   font-family: $font;
