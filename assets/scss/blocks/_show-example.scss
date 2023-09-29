@@ -1,5 +1,6 @@
 .show-example {
     padding: get-vw(100px) 0;
+    background-color: #F4F4F4;
 
     &__image {
         @media screen and (max-width: 768px) {

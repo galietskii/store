@@ -2,6 +2,19 @@
 .container {
   max-width: 1200px !important;
 }
+.main {
+  position: relative;
+  &.active {
+    &:before {
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0,0,0,0.8);
+      z-index: 3;
+    }
+  }
+}
 
 @function get-vw($target) {
   $vw-context: (1920 * 0.01) * 1px;
@@ -18,7 +31,7 @@
 /* Import blocks */
 @import 'blocks/hero';
 @import 'blocks/show-example';
-
+@import 'blocks/featured-products';
 .content-wrapper {
   height: 100%;
   padding-top: get-vw(100px);

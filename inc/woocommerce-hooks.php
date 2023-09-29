@@ -21,4 +21,11 @@
         echo '<h2 class="woocommerce-loop-product__title">' . get_the_title() . '</h2>';
     }
     add_action('woocommerce_shop_loop_item_title', 'woocommerce_template_loop_product_title');
+
+    // Update mini-cart
+
+    add_filter('woocommerce_add_to_cart_fragments', function($fragments) {
+        $fragments['.mini-cart-cnt'] = '<span class="mini-cart-cnt">' . count(WC()->cart->get_cart()) . '</span>';
+        return $fragments;
+    })
 ?>

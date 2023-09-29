@@ -85,13 +85,17 @@ function my_scripts_method(){
     wp_deregister_script('jquery');
     wp_register_script( 'jquery', get_template_directory_uri() . '/assets/js/jquery-3.6.4.min.js', false, null, true );
     wp_enqueue_script('jquery');
+    wp_enqueue_style('mytheme-slick-style', 'https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css');
     wp_enqueue_style( 'mytheme-fontawesome', 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css' );
     wp_enqueue_style( 'style', get_template_directory_uri(). '/assets/css/style.css' );
+    
     wp_enqueue_style('store-google-fonts', 'https://fonts.googleapis.com/css2?family=Lora:wght@400;500&family=Marcellus&display=swap'); 
     wp_enqueue_style( 'mytheme-bootstrap', 'https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css' );
-
+    wp_enqueue_script('mytheme-slick', 'https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js', array(), false, true);
     wp_enqueue_script('mytheme-bootstrap', 'https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js', array(), false, true);
     wp_enqueue_script('your-script-handle', get_template_directory_uri() . '/assets/js/main.js', array('jquery'), null, true);
+   
+    
 }
 add_action('wp_head', function() {
     echo '<link rel="preconnect" href="https://fonts.googleapis.com">';
@@ -115,4 +119,30 @@ function my_custom_widget_init() {
     ));
 }
 add_action('widgets_init', 'my_custom_widget_init');
+
+// COUNT PRODUCT ON CART
+
+function update_cart_item_quantity() {
+    $cart_item_key = sanitize_text_field($_POST['cart_item_key']);
+    $quantity = intval($_POST['quantity']);
+
+    if (WC()->cart->cart_contents_count > 0 && WC()->cart->find_product_in_cart($cart_item_key)) {
+        WC()->cart->set_quantity($cart_item_key, $quantity);
+        WC()->cart->calculate_totals();
+
+        wp_send_json_success(array(
+            'message' => __('Cart item quantity updated successfully.', 'text-domain'),
+            'fragments' => apply_filters('woocommerce_add_to_cart_fragments', array(
+                'div.widget_shopping_cart_content' => wc_get_template_part('cart/mini-cart'),
+            )),
+        ));
+    } else {
+        wp_send_json_error(array(
+            'message' => __('Cart item not found.', 'text-domain'),
+        ));
+    }
+}
+
+add_action('wp_ajax_update_cart_item_quantity', 'update_cart_item_quantity');
+add_action('wp_ajax_nopriv_update_cart_item_quantity', 'update_cart_item_quantity');
 

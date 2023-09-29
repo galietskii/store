@@ -23,6 +23,16 @@ function register_acf_block_types()
             'keywords' => array('show example section'),
         )
     );
+    acf_register_block_type(
+        array(
+            'name' => 'Featured products Section',
+            'title' => __('Featured products Section'),
+            'render_template' => '/templates/blocks/featured-products-section.php',
+            'icon' => 'block-default',
+            'keywords' => array('featured products section'),
+        )
+    );
+
 
 }
 ?>
