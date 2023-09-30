@@ -66,3 +66,30 @@ p {
   border: 1px solid $main;
   border-radius: 2px;
 }
+.slick-slide {
+  margin: 0 15px;
+}
+
+/* the parent */
+.slick-list {
+  margin: 0 -15px;
+}
+
+.slick-prev-custom,
+.slick-next-custom {
+  background-color: transparent;
+  border: none;
+  outline: none;
+  color: $gray;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+}
+
+.slick-prev-custom {
+  left: -25px;
+}
+
+.slick-next-custom {
+  right: -25px;
+}

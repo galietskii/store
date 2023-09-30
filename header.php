@@ -74,7 +74,7 @@
                                 <span class="mini-cart-cnt"><?php echo count(WC()->cart->get_cart()); ?></span>
                             </div>
                             <div class="cart-count">
-                            <?php 
+                                <?php 
                             $cart = WC()->cart;
                             $total = $cart->get_total();
                             echo $total;
@@ -93,3 +93,15 @@
             </div>
         </div>
     </header>
+    <div class="products__cart">
+        <div class="products__cart-title">
+            <h4>Shopping cart</h4>
+            <svg class="close-cart" xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25"
+                fill="none">
+                <path
+                    d="M6.4 19.5L5 18.1L10.6 12.5L5 6.9L6.4 5.5L12 11.1L17.6 5.5L19 6.9L13.4 12.5L19 18.1L17.6 19.5L12 13.9L6.4 19.5Z"
+                    fill="#777777" />
+            </svg>
+        </div>
+        <?php woocommerce_mini_cart(); ?>
+    </div>

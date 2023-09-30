@@ -32,7 +32,42 @@ function register_acf_block_types()
             'keywords' => array('featured products section'),
         )
     );
-
+    acf_register_block_type(
+        array(
+            'name' => 'Special offer Section',
+            'title' => __('Special offer Section'),
+            'render_template' => '/templates/blocks/special-offer-section.php',
+            'icon' => 'block-default',
+            'keywords' => array('special offer section'),
+        )
+    );
+    acf_register_block_type(
+        array(
+            'name' => 'Discount Section',
+            'title' => __('Discount Section'),
+            'render_template' => '/templates/blocks/discount-section.php',
+            'icon' => 'block-default',
+            'keywords' => array('discount section'),
+        )
+    );
+    acf_register_block_type(
+        array(
+            'name' => 'Categories products Section',
+            'title' => __('Categories products Section'),
+            'render_template' => '/templates/blocks/categories-products-section.php',
+            'icon' => 'block-default',
+            'keywords' => array('categories products section'),
+        )
+    );
+    acf_register_block_type(
+        array(
+            'name' => 'Blog section',
+            'title' => __('Blog section'),
+            'render_template' => '/templates/blocks/blog-section.php',
+            'icon' => 'block-default',
+            'keywords' => array('blog section'),
+        )
+    );
 
 }
 ?>

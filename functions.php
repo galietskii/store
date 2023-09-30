@@ -146,3 +146,10 @@ function update_cart_item_quantity() {
 add_action('wp_ajax_update_cart_item_quantity', 'update_cart_item_quantity');
 add_action('wp_ajax_nopriv_update_cart_item_quantity', 'update_cart_item_quantity');
 
+// WIDGET LATESTS BLOGS
+function custom_recent_posts_query($args) {
+    $args['category_name'] = 'blogs'; 
+    return $args;
+}
+add_filter('widget_posts_args', 'custom_recent_posts_query');
+
